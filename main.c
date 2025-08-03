@@ -211,6 +211,8 @@ int main(void) {
   bool hashit = false;
   int money = 100;
   int bet = 0;
+  bool hitbutton = false;
+  bool standbutton = false;
   float totaltime = 0.;
   Vector2 mousepos = {0, 0};
   for (int i = 0; i < 52; i++) {
@@ -261,16 +263,18 @@ int main(void) {
       // printf("test\n");
 
       mousepos = GetMousePosition();
-      if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+      if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
         if (mousepos.x > 800 && mousepos.x < 900 && mousepos.y > 100 &&
             mousepos.y < 200) {
           stand = true;
           multiiter = 2;
           curtime = totaltime + 1.;
+          standbutton = true;
         }
         if (mousepos.x > 1000 && mousepos.x < 1100 && mousepos.y > 100 &&
-            mousepos.y < 200 && !stand) {
+            mousepos.y < 200 && !stand && !hitbutton) {
           hashit = true;
+          hitbutton = true;
           player[multiiter] = maindeck[deckiter];
           player[multiiter].exists = true;
           multiiter++;
@@ -280,23 +284,43 @@ int main(void) {
             deckiter++;
           }
         }
+      } else {
+        hitbutton = false;
+        standbutton = false;
+      }
+      if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
         if (!hashit) {
           if (mousepos.x > 800 && mousepos.x < 850 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            bet = (int)(money * 0.2);
-            printf("1\n");
+            if (bet != money*0.2) {
+            bet = money * 0.2;
+            } else {
+              bet = 0;
+            }
           }
           if (mousepos.x > 875 && mousepos.x < 925 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            bet = (int)(money * 0.5);
+            if (bet != money*0.5) {
+            bet = money * 0.5;
+            } else {
+              bet = 0;
+            }
           }
           if (mousepos.x > 725 && mousepos.x < 775 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            bet = (int)(money * 0.1);
+            if (bet != money*0.1) {
+            bet = money * 0.1;
+            } else {
+              bet = 0;
+            }
           }
           if (mousepos.x > 975 && mousepos.x < 1025 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            bet = (int)(money);
+            if (bet != money) {
+            bet = money;
+            } else {
+              bet = 0;
+            }
           }
         }
       }
@@ -343,6 +367,7 @@ int main(void) {
         if (totaltime > curtime) {
           win = false;
           newgame(player, dealer, maindeck, deckiter);
+          standbutton = false;
           hashit = false;
           multiiter = 1;
           stand = false;
@@ -360,6 +385,7 @@ int main(void) {
         bet = 0;
         if (totaltime > curtime) {
           newgame(player, dealer, maindeck, deckiter);
+          standbutton = false;
           hashit = false;
           loss = false;
           multiiter = 1;
@@ -394,24 +420,57 @@ int main(void) {
 
     totaltime += GetFrameTime();
     BeginDrawing();
+    Color tempred = {155,0,0,255};
     ClearBackground(GRAY);
     DrawText("Stand", 805, 50, 30, WHITE);
     DrawCircle(850, 150, 50, WHITE);
+    DrawCircle(850,150,40, tempred);
+    if (!standbutton) {
+    DrawRectangle(810, 140, 80, 10, tempred);
+    DrawCircle(850,140,40, RED);
+    }
     DrawText("Hit", 1030, 50, 30, WHITE);
-    if (!stand) {
-      DrawCircle(1050, 150, 50, WHITE);
+    DrawCircle(1050, 150, 50, WHITE);
+    DrawCircle(1050,150,40, tempred);
+    if (!hitbutton && !stand) {
+    DrawRectangle(1010, 140, 80, 10, tempred);
+    DrawCircle(1050,140,40, RED);
     }
     DrawText(TextFormat("Bet: $%i", bet), 50, 650, 30, WHITE);
     DrawText(TextFormat("Bank: $%i", money), 50, 600, 30, WHITE);
     if (!hashit && !stand) {
       DrawText("20%", 810, 600, 20, WHITE);
       DrawCircle(825, 650, 25, WHITE);
+      DrawCircle(825, 650, 20, RED);
+      if (bet == money*0.2) {
+      DrawRectangle(825, 630, 20, 20, RED);
+      } else {
+      DrawRectangle(805, 630, 20, 20, RED);
+      }
       DrawText("50%", 885, 600, 20, WHITE);
       DrawCircle(900, 650, 25, WHITE);
+      DrawCircle(900, 650, 20, RED);
+      if (bet == money*0.5) {
+      DrawRectangle(900, 630, 20, 20, RED);
+      } else {
+      DrawRectangle(880, 630, 20, 20, RED);
+      }
       DrawText("10%", 740, 600, 20, WHITE);
       DrawCircle(750, 650, 25, WHITE);
+      DrawCircle(750, 650, 20, RED);
+      if (bet == money*0.1) {
+      DrawRectangle(750, 630, 20, 20, RED);
+      } else {
+      DrawRectangle(730, 630, 20, 20, RED);
+      }
       DrawText("All in!", 970, 600, 20, WHITE);
       DrawCircle(1000, 650, 25, WHITE);
+      DrawCircle(1000, 650, 20, RED);
+      if (bet == money) {
+      DrawRectangle(1000, 630, 20, 20, RED);
+      } else {
+      DrawRectangle(980, 630, 20, 20, RED);
+      }
     }
     DrawText("Dealers Cards:", 20, 20, 60, WHITE);
     drawpos.x = 40;
