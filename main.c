@@ -106,235 +106,248 @@ void drawblankcard(Vector2 pos, float width, float height) {
 }
 void drawface(Vector2 pos, float scale, int special, Color color) {
 
-  DrawRectangle(pos.x-scale/0.5*0.7, pos.y+scale/0.5*1.3, scale/0.5*0.2, scale/0.5*0.3, color);
-  DrawRectangle(pos.x-scale, pos.y+scale/0.5*1.5, scale/0.5*0.3, scale/0.5*0.3, color);
-  DrawRectangle(pos.x-scale/0.5*0.2, pos.y+scale/0.5*1.7, scale/0.5*0.5, scale/0.5*0.3, color);
-  DrawRectangle(pos.x+scale/0.5*0.3, pos.y+scale/0.5*1.9, scale/0.5*0.5, scale/0.5*0.2, color);
+  DrawRectangle(pos.x - scale / 0.5 * 0.7, pos.y + scale / 0.5 * 1.3,
+                scale / 0.5 * 0.2, scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x - scale, pos.y + scale / 0.5 * 1.5, scale / 0.5 * 0.3,
+                scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x - scale / 0.5 * 0.2, pos.y + scale / 0.5 * 1.7,
+                scale / 0.5 * 0.5, scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x + scale / 0.5 * 0.3, pos.y + scale / 0.5 * 1.9,
+                scale / 0.5 * 0.5, scale / 0.5 * 0.2, color);
 
-  DrawRectangle(pos.x+scale/0.5*2.1, pos.y+scale/0.5*1.3, scale/0.5*0.2, scale/0.5*0.3, color);
-  DrawRectangle(pos.x+scale/0.5*1.8, pos.y+scale/0.5*1.5, scale/0.5*0.3, scale/0.5*0.3, color);
-  DrawRectangle(pos.x+scale/0.5*1.3, pos.y+scale/0.5*1.7, scale/0.5*0.5, scale/0.5*0.3, color);
-  DrawRectangle(pos.x+scale/0.5*0.8, pos.y+scale/0.5*1.9, scale/0.5*0.5, scale/0.5*0.2, color);
+  DrawRectangle(pos.x + scale / 0.5 * 2.1, pos.y + scale / 0.5 * 1.3,
+                scale / 0.5 * 0.2, scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x + scale / 0.5 * 1.8, pos.y + scale / 0.5 * 1.5,
+                scale / 0.5 * 0.3, scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x + scale / 0.5 * 1.3, pos.y + scale / 0.5 * 1.7,
+                scale / 0.5 * 0.5, scale / 0.5 * 0.3, color);
+  DrawRectangle(pos.x + scale / 0.5 * 0.8, pos.y + scale / 0.5 * 1.9,
+                scale / 0.5 * 0.5, scale / 0.5 * 0.2, color);
 
-  Vector2 pos1 = {pos.x-scale/0.5*0.7, pos.y+scale/0.5*1.3};
-  Vector2 pos2 = {pos.x-scale/0.5*0.5, pos.y+scale/0.5*1.5};
-  Vector2 pos3 = {pos.x-scale/0.5*0.5, pos.y+scale/0.5*1.3};
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.7;
-  pos1.y = pos.y+scale/0.5*1.4;
-  pos2.x = pos.x-scale/0.5*0.7;
-  pos2.y = pos.y+scale/0.5*1.6;
-  pos3.x = pos.x-scale/0.5*0.5;
-  pos3.y = pos.y+scale/0.5*1.6;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.5;
-  pos1.y = pos.y+scale/0.5*1.5;
-  pos2.x = pos.x-scale/0.5*0.2;
-  pos2.y = pos.y+scale/0.5*1.5;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y+scale/0.5*1.7;
-  DrawTriangle(pos1,pos3,pos2,WHITE);
-  pos1.x = pos.x-scale/0.5*0.5;
-  pos1.y = pos.y+scale/0.5*1.6;
-  pos2.x = pos.x-scale/0.5*0.5;
-  pos2.y = pos.y+scale/0.5*1.8;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y+scale/0.5*1.8;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.2;
-  pos1.y = pos.y+scale/0.5*1.7;
-  pos2.x = pos.x+scale/0.5*0.3;
-  pos2.y = pos.y+scale/0.5*1.7;
-  pos3.x = pos.x+scale/0.5*0.3;
-  pos3.y = pos.y+scale/0.5*1.9;
-  DrawTriangle(pos1,pos3,pos2,WHITE);
-  pos1.x = pos.x-scale/0.5*0.2;
-  pos1.y = pos.y+scale/0.5*1.8;
-  pos2.x = pos.x-scale/0.5*0.2;
-  pos2.y = pos.y+scale/0.5*2.0;
-  pos3.x = pos.x+scale/0.5*0.3;
-  pos3.y = pos.y+scale/0.5*2.0;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*0.3;
-  pos1.y = pos.y+scale/0.5*1.9;
-  pos2.x = pos.x+scale/0.5*0.8;
-  pos2.y = pos.y+scale/0.5*1.9;
-  pos3.x = pos.x+scale/0.5*0.8;
-  pos3.y = pos.y+scale/0.5*2;
-  DrawTriangle(pos1,pos3,pos2,WHITE);
-  pos1.x = pos.x+scale/0.5*0.3;
-  pos1.y = pos.y+scale/0.5*2;
-  pos2.x = pos.x+scale/0.5*0.3;
-  pos2.y = pos.y+scale/0.5*2.1;
-  pos3.x = pos.x+scale/0.5*0.8;
-  pos3.y = pos.y+scale/0.5*2.1;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*0.8;
-  pos1.y = pos.y+scale/0.5*1.9;
-  pos2.x = pos.x+scale/0.5*0.8;
-  pos2.y = pos.y+scale/0.5*2;
-  pos3.x = pos.x+scale/0.5*1.3;
-  pos3.y = pos.y+scale/0.5*1.9;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*0.8;
-  pos1.y = pos.y+scale/0.5*2.1;
-  pos2.x = pos.x+scale/0.5*1.3;
-  pos2.y = pos.y+scale/0.5*2.1;
-  pos3.x = pos.x+scale/0.5*1.3;
-  pos3.y = pos.y+scale/0.5*2;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.3;
-  pos1.y = pos.y+scale/0.5*1.7;
-  pos2.x = pos.x+scale/0.5*1.3;
-  pos2.y = pos.y+scale/0.5*1.9;
-  pos3.x = pos.x+scale/0.5*1.8;
-  pos3.y = pos.y+scale/0.5*1.7;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.3;
-  pos1.y = pos.y+scale/0.5*2;
-  pos2.x = pos.x+scale/0.5*1.8;
-  pos2.y = pos.y+scale/0.5*2;
-  pos3.x = pos.x+scale/0.5*1.8;
-  pos3.y = pos.y+scale/0.5*1.8;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y+scale/0.5*1.5;
-  pos2.x = pos.x+scale/0.5*1.8;
-  pos2.y = pos.y+scale/0.5*1.7;
-  pos3.x = pos.x+scale/0.5*2.1;
-  pos3.y = pos.y+scale/0.5*1.5;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y+scale/0.5*1.8;
-  pos2.x = pos.x+scale/0.5*2.1;
-  pos2.y = pos.y+scale/0.5*1.8;
-  pos3.x = pos.x+scale/0.5*2.1;
-  pos3.y = pos.y+scale/0.5*1.6;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*2.1;
-  pos1.y = pos.y+scale/0.5*1.3;
-  pos2.x = pos.x+scale/0.5*2.1;
-  pos2.y = pos.y+scale/0.5*1.5;
-  pos3.x = pos.x+scale/0.5*2.3;
-  pos3.y = pos.y+scale/0.5*1.3;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*2.1;
-  pos1.y = pos.y+scale/0.5*1.6;
-  pos2.x = pos.x+scale/0.5*2.3;
-  pos2.y = pos.y+scale/0.5*1.6;
-  pos3.x = pos.x+scale/0.5*2.3;
-  pos3.y = pos.y+scale/0.5*1.4;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+  Vector2 pos1 = {pos.x - scale / 0.5 * 0.7, pos.y + scale / 0.5 * 1.3};
+  Vector2 pos2 = {pos.x - scale / 0.5 * 0.5, pos.y + scale / 0.5 * 1.5};
+  Vector2 pos3 = {pos.x - scale / 0.5 * 0.5, pos.y + scale / 0.5 * 1.3};
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x - scale / 0.5 * 0.7;
+  pos1.y = pos.y + scale / 0.5 * 1.4;
+  pos2.x = pos.x - scale / 0.5 * 0.7;
+  pos2.y = pos.y + scale / 0.5 * 1.6;
+  pos3.x = pos.x - scale / 0.5 * 0.5;
+  pos3.y = pos.y + scale / 0.5 * 1.6;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x - scale / 0.5 * 0.5;
+  pos1.y = pos.y + scale / 0.5 * 1.5;
+  pos2.x = pos.x - scale / 0.5 * 0.2;
+  pos2.y = pos.y + scale / 0.5 * 1.5;
+  pos3.x = pos.x - scale / 0.5 * 0.2;
+  pos3.y = pos.y + scale / 0.5 * 1.7;
+  DrawTriangle(pos1, pos3, pos2, WHITE);
+  pos1.x = pos.x - scale / 0.5 * 0.5;
+  pos1.y = pos.y + scale / 0.5 * 1.6;
+  pos2.x = pos.x - scale / 0.5 * 0.5;
+  pos2.y = pos.y + scale / 0.5 * 1.8;
+  pos3.x = pos.x - scale / 0.5 * 0.2;
+  pos3.y = pos.y + scale / 0.5 * 1.8;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x - scale / 0.5 * 0.2;
+  pos1.y = pos.y + scale / 0.5 * 1.7;
+  pos2.x = pos.x + scale / 0.5 * 0.3;
+  pos2.y = pos.y + scale / 0.5 * 1.7;
+  pos3.x = pos.x + scale / 0.5 * 0.3;
+  pos3.y = pos.y + scale / 0.5 * 1.9;
+  DrawTriangle(pos1, pos3, pos2, WHITE);
+  pos1.x = pos.x - scale / 0.5 * 0.2;
+  pos1.y = pos.y + scale / 0.5 * 1.8;
+  pos2.x = pos.x - scale / 0.5 * 0.2;
+  pos2.y = pos.y + scale / 0.5 * 2.0;
+  pos3.x = pos.x + scale / 0.5 * 0.3;
+  pos3.y = pos.y + scale / 0.5 * 2.0;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 0.3;
+  pos1.y = pos.y + scale / 0.5 * 1.9;
+  pos2.x = pos.x + scale / 0.5 * 0.8;
+  pos2.y = pos.y + scale / 0.5 * 1.9;
+  pos3.x = pos.x + scale / 0.5 * 0.8;
+  pos3.y = pos.y + scale / 0.5 * 2;
+  DrawTriangle(pos1, pos3, pos2, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 0.3;
+  pos1.y = pos.y + scale / 0.5 * 2;
+  pos2.x = pos.x + scale / 0.5 * 0.3;
+  pos2.y = pos.y + scale / 0.5 * 2.1;
+  pos3.x = pos.x + scale / 0.5 * 0.8;
+  pos3.y = pos.y + scale / 0.5 * 2.1;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 0.8;
+  pos1.y = pos.y + scale / 0.5 * 1.9;
+  pos2.x = pos.x + scale / 0.5 * 0.8;
+  pos2.y = pos.y + scale / 0.5 * 2;
+  pos3.x = pos.x + scale / 0.5 * 1.3;
+  pos3.y = pos.y + scale / 0.5 * 1.9;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 0.8;
+  pos1.y = pos.y + scale / 0.5 * 2.1;
+  pos2.x = pos.x + scale / 0.5 * 1.3;
+  pos2.y = pos.y + scale / 0.5 * 2.1;
+  pos3.x = pos.x + scale / 0.5 * 1.3;
+  pos3.y = pos.y + scale / 0.5 * 2;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 1.3;
+  pos1.y = pos.y + scale / 0.5 * 1.7;
+  pos2.x = pos.x + scale / 0.5 * 1.3;
+  pos2.y = pos.y + scale / 0.5 * 1.9;
+  pos3.x = pos.x + scale / 0.5 * 1.8;
+  pos3.y = pos.y + scale / 0.5 * 1.7;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 1.3;
+  pos1.y = pos.y + scale / 0.5 * 2;
+  pos2.x = pos.x + scale / 0.5 * 1.8;
+  pos2.y = pos.y + scale / 0.5 * 2;
+  pos3.x = pos.x + scale / 0.5 * 1.8;
+  pos3.y = pos.y + scale / 0.5 * 1.8;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 1.8;
+  pos1.y = pos.y + scale / 0.5 * 1.5;
+  pos2.x = pos.x + scale / 0.5 * 1.8;
+  pos2.y = pos.y + scale / 0.5 * 1.7;
+  pos3.x = pos.x + scale / 0.5 * 2.1;
+  pos3.y = pos.y + scale / 0.5 * 1.5;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 1.8;
+  pos1.y = pos.y + scale / 0.5 * 1.8;
+  pos2.x = pos.x + scale / 0.5 * 2.1;
+  pos2.y = pos.y + scale / 0.5 * 1.8;
+  pos3.x = pos.x + scale / 0.5 * 2.1;
+  pos3.y = pos.y + scale / 0.5 * 1.6;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 2.1;
+  pos1.y = pos.y + scale / 0.5 * 1.3;
+  pos2.x = pos.x + scale / 0.5 * 2.1;
+  pos2.y = pos.y + scale / 0.5 * 1.5;
+  pos3.x = pos.x + scale / 0.5 * 2.3;
+  pos3.y = pos.y + scale / 0.5 * 1.3;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
+  pos1.x = pos.x + scale / 0.5 * 2.1;
+  pos1.y = pos.y + scale / 0.5 * 1.6;
+  pos2.x = pos.x + scale / 0.5 * 2.3;
+  pos2.y = pos.y + scale / 0.5 * 1.6;
+  pos3.x = pos.x + scale / 0.5 * 2.3;
+  pos3.y = pos.y + scale / 0.5 * 1.4;
+  DrawTriangle(pos1, pos2, pos3, WHITE);
 
   if (special == 3) {
-    DrawRectangle(pos.x-scale/0.5*0.6, pos.y+scale/0.5*0.6, scale/0.5*0.4, scale/0.5*0.6, color);
-    DrawRectangle(pos.x-scale/0.5*0.2, pos.y+scale/0.5, scale/0.5*2, scale/0.5*0.2, color);
-    DrawRectangle(pos.x+scale/0.5*1.8, pos.y+scale/0.5*0.6, scale/0.5*0.4, scale/0.5*0.6, color);
-  pos1.x = pos.x-scale/0.5*0.6;
-  pos1.y = pos.y+scale/0.5*0.6;
-  pos2.x = pos.x-scale/0.5*0.2;
-  pos2.y = pos.y+scale/0.5;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y+scale/0.5*0.6;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.6;
-  pos1.y = pos.y+scale/0.5*0.8;
-  pos2.x = pos.x-scale/0.5*0.6;
-  pos2.y = pos.y+scale/0.5*1.2;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y+scale/0.5*1.2;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+    DrawRectangle(pos.x - scale / 0.5 * 0.6, pos.y + scale / 0.5 * 0.6,
+                  scale / 0.5 * 0.4, scale / 0.5 * 0.6, color);
+    DrawRectangle(pos.x - scale / 0.5 * 0.2, pos.y + scale / 0.5,
+                  scale / 0.5 * 2, scale / 0.5 * 0.2, color);
+    DrawRectangle(pos.x + scale / 0.5 * 1.8, pos.y + scale / 0.5 * 0.6,
+                  scale / 0.5 * 0.4, scale / 0.5 * 0.6, color);
+    pos1.x = pos.x - scale / 0.5 * 0.6;
+    pos1.y = pos.y + scale / 0.5 * 0.6;
+    pos2.x = pos.x - scale / 0.5 * 0.2;
+    pos2.y = pos.y + scale / 0.5;
+    pos3.x = pos.x - scale / 0.5 * 0.2;
+    pos3.y = pos.y + scale / 0.5 * 0.6;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x - scale / 0.5 * 0.6;
+    pos1.y = pos.y + scale / 0.5 * 0.8;
+    pos2.x = pos.x - scale / 0.5 * 0.6;
+    pos2.y = pos.y + scale / 0.5 * 1.2;
+    pos3.x = pos.x - scale / 0.5 * 0.2;
+    pos3.y = pos.y + scale / 0.5 * 1.2;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
 
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y+scale/0.5*0.6;
-  pos2.x = pos.x+scale/0.5*1.8;
-  pos2.y = pos.y+scale/0.5;
-  pos3.x = pos.x+scale/0.5*2.2;
-  pos3.y = pos.y+scale/0.5*0.6;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y+scale/0.5*1.2;
-  pos2.x = pos.x+scale/0.5*2.2;
-  pos2.y = pos.y+scale/0.5*1.2;
-  pos3.x = pos.x+scale/0.5*2.2;
-  pos3.y = pos.y+scale/0.5*0.8;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+    pos1.x = pos.x + scale / 0.5 * 1.8;
+    pos1.y = pos.y + scale / 0.5 * 0.6;
+    pos2.x = pos.x + scale / 0.5 * 1.8;
+    pos2.y = pos.y + scale / 0.5;
+    pos3.x = pos.x + scale / 0.5 * 2.2;
+    pos3.y = pos.y + scale / 0.5 * 0.6;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x + scale / 0.5 * 1.8;
+    pos1.y = pos.y + scale / 0.5 * 1.2;
+    pos2.x = pos.x + scale / 0.5 * 2.2;
+    pos2.y = pos.y + scale / 0.5 * 1.2;
+    pos3.x = pos.x + scale / 0.5 * 2.2;
+    pos3.y = pos.y + scale / 0.5 * 0.8;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
   }
   if (special == 2) {
-    DrawRectangle(pos.x-scale/0.5, pos.y-scale/0.5*0.4, scale/0.5*0.2, scale/0.5, color);
-    DrawRectangle(pos.x-scale/0.5, pos.y-scale/0.5, scale/0.5*0.8, scale/0.5*0.6, color);
-    DrawRectangle(pos.x-scale/0.5*0.2, pos.y-scale/0.5*1.2, scale/0.5*2, scale/0.5*0.4, color);
+    DrawRectangle(pos.x - scale / 0.5, pos.y - scale / 0.5 * 0.4,
+                  scale / 0.5 * 0.2, scale / 0.5, color);
+    DrawRectangle(pos.x - scale / 0.5, pos.y - scale / 0.5, scale / 0.5 * 0.8,
+                  scale / 0.5 * 0.6, color);
+    DrawRectangle(pos.x - scale / 0.5 * 0.2, pos.y - scale / 0.5 * 1.2,
+                  scale / 0.5 * 2, scale / 0.5 * 0.4, color);
 
-    DrawRectangle(pos.x+scale/0.5*2.4, pos.y-scale/0.5*0.4, scale/0.5*0.2, scale/0.5, color);
-    DrawRectangle(pos.x+scale/0.5*1.8, pos.y-scale/0.5, scale/0.5*0.8, scale/0.5*0.6, color);
-  pos1.x = pos.x-scale/0.5;
-  pos1.y = pos.y-scale/0.5;
-  pos2.x = pos.x-scale/0.5;
-  pos2.y = pos.y-scale/0.5*0.4;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y-scale/0.5;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.8;
-  pos1.y = pos.y-scale/0.5*0.4;
-  pos2.x = pos.x-scale/0.5*0.2;
-  pos2.y = pos.y-scale/0.5*0.4;
-  pos3.x = pos.x-scale/0.5*0.2;
-  pos3.y = pos.y-scale/0.5*0.8;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+    DrawRectangle(pos.x + scale / 0.5 * 2.4, pos.y - scale / 0.5 * 0.4,
+                  scale / 0.5 * 0.2, scale / 0.5, color);
+    DrawRectangle(pos.x + scale / 0.5 * 1.8, pos.y - scale / 0.5,
+                  scale / 0.5 * 0.8, scale / 0.5 * 0.6, color);
+    pos1.x = pos.x - scale / 0.5;
+    pos1.y = pos.y - scale / 0.5;
+    pos2.x = pos.x - scale / 0.5;
+    pos2.y = pos.y - scale / 0.5 * 0.4;
+    pos3.x = pos.x - scale / 0.5 * 0.2;
+    pos3.y = pos.y - scale / 0.5;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x - scale / 0.5 * 0.8;
+    pos1.y = pos.y - scale / 0.5 * 0.4;
+    pos2.x = pos.x - scale / 0.5 * 0.2;
+    pos2.y = pos.y - scale / 0.5 * 0.4;
+    pos3.x = pos.x - scale / 0.5 * 0.2;
+    pos3.y = pos.y - scale / 0.5 * 0.8;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
 
-  pos1.x = pos.x-scale/0.5*0.2;
-  pos1.y = pos.y-scale/0.5*1.2;
-  pos2.x = pos.x-scale/0.5*0.2;
-  pos2.y = pos.y-scale/0.5;
-  pos3.x = pos.x+scale/0.5*0.8;
-  pos3.y = pos.y-scale/0.5*1.2;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x-scale/0.5*0.2;
-  pos1.y = pos.y-scale/0.5*0.8;
-  pos2.x = pos.x+scale/0.5*0.8;
-  pos2.y = pos.y-scale/0.5*0.8;
-  pos3.x = pos.x+scale/0.5*0.8;
-  pos3.y = pos.y-scale/0.5;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+    pos1.x = pos.x - scale / 0.5 * 0.2;
+    pos1.y = pos.y - scale / 0.5 * 1.2;
+    pos2.x = pos.x - scale / 0.5 * 0.2;
+    pos2.y = pos.y - scale / 0.5;
+    pos3.x = pos.x + scale / 0.5 * 0.8;
+    pos3.y = pos.y - scale / 0.5 * 1.2;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x - scale / 0.5 * 0.2;
+    pos1.y = pos.y - scale / 0.5 * 0.8;
+    pos2.x = pos.x + scale / 0.5 * 0.8;
+    pos2.y = pos.y - scale / 0.5 * 0.8;
+    pos3.x = pos.x + scale / 0.5 * 0.8;
+    pos3.y = pos.y - scale / 0.5;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
 
+    pos1.x = pos.x + scale / 0.5 * 0.8;
+    pos1.y = pos.y - scale / 0.5 * 1.2;
+    pos2.x = pos.x + scale / 0.5 * 1.8;
+    pos2.y = pos.y - scale / 0.5;
+    pos3.x = pos.x + scale / 0.5 * 1.8;
+    pos3.y = pos.y - scale / 0.5 * 1.2;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x + scale / 0.5 * 0.8;
+    pos1.y = pos.y - scale / 0.5;
+    pos2.x = pos.x + scale / 0.5 * 0.8;
+    pos2.y = pos.y - scale / 0.5 * 0.8;
+    pos3.x = pos.x + scale / 0.5 * 1.8;
+    pos3.y = pos.y - scale / 0.5 * 0.8;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
 
-  pos1.x = pos.x+scale/0.5*0.8;
-  pos1.y = pos.y-scale/0.5*1.2;
-  pos2.x = pos.x+scale/0.5*1.8;
-  pos2.y = pos.y-scale/0.5;
-  pos3.x = pos.x+scale/0.5*1.8;
-  pos3.y = pos.y-scale/0.5*1.2;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*0.8;
-  pos1.y = pos.y-scale/0.5;
-  pos2.x = pos.x+scale/0.5*0.8;
-  pos2.y = pos.y-scale/0.5*0.8;
-  pos3.x = pos.x+scale/0.5*1.8;
-  pos3.y = pos.y-scale/0.5*0.8;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y-scale/0.5;
-  pos2.x = pos.x+scale/0.5*2.6;
-  pos2.y = pos.y-scale/0.5*0.4;
-  pos3.x = pos.x+scale/0.5*2.6;
-  pos3.y = pos.y-scale/0.5;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
-  pos1.x = pos.x+scale/0.5*1.8;
-  pos1.y = pos.y-scale/0.5*0.8;
-  pos2.x = pos.x+scale/0.5*1.8;
-  pos2.y = pos.y-scale/0.5*0.4;
-  pos3.x = pos.x+scale/0.5*2.4;
-  pos3.y = pos.y-scale/0.5*0.4;
-  DrawTriangle(pos1,pos2,pos3,WHITE);
+    pos1.x = pos.x + scale / 0.5 * 1.8;
+    pos1.y = pos.y - scale / 0.5;
+    pos2.x = pos.x + scale / 0.5 * 2.6;
+    pos2.y = pos.y - scale / 0.5 * 0.4;
+    pos3.x = pos.x + scale / 0.5 * 2.6;
+    pos3.y = pos.y - scale / 0.5;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
+    pos1.x = pos.x + scale / 0.5 * 1.8;
+    pos1.y = pos.y - scale / 0.5 * 0.8;
+    pos2.x = pos.x + scale / 0.5 * 1.8;
+    pos2.y = pos.y - scale / 0.5 * 0.4;
+    pos3.x = pos.x + scale / 0.5 * 2.4;
+    pos3.y = pos.y - scale / 0.5 * 0.4;
+    DrawTriangle(pos1, pos2, pos3, WHITE);
   }
   DrawCircle(pos.x, pos.y, scale, color);
-  DrawCircle(pos.x+scale/0.5*1.6, pos.y, scale, color);
-  DrawCircle(pos.x+scale/0.5*0.8, pos.y+scale/0.5*0.8, scale/0.5*0.2, color);
-
+  DrawCircle(pos.x + scale / 0.5 * 1.6, pos.y, scale, color);
+  DrawCircle(pos.x + scale / 0.5 * 0.8, pos.y + scale / 0.5 * 0.8,
+             scale / 0.5 * 0.2, color);
 }
-
-
 
 void drawcard(Vector2 pos, float width, float height, int num, int type,
               int special, int color) {
@@ -377,31 +390,31 @@ void drawcard(Vector2 pos, float width, float height, int num, int type,
   default:
     break;
   }
-  if (special ==0 || special == 4) {
-  if (type == 0) {
-    typepos = pos;
-    typepos.x += 38;
-    typepos.y += 100;
-    drawspade(typepos, 38.4, 12, cardcolor);
-  }
-  if (type == 1) {
-    typepos = pos;
-    typepos.x += 32;
-    typepos.y += 100;
-    drawclub(typepos, 12, cardcolor);
-  }
-  if (type == 2) {
-    typepos = pos;
-    typepos.x += 38;
-    typepos.y += 80;
-    drawheart(typepos, 38.4, 12, cardcolor);
-  }
-  if (type == 3) {
-    typepos = pos;
-    typepos.x += 50;
-    typepos.y += 70;
-    drawdiamond(typepos, 40, 60, cardcolor);
-  }
+  if (special == 0 || special == 4) {
+    if (type == 0) {
+      typepos = pos;
+      typepos.x += 38;
+      typepos.y += 100;
+      drawspade(typepos, 38.4, 12, cardcolor);
+    }
+    if (type == 1) {
+      typepos = pos;
+      typepos.x += 32;
+      typepos.y += 100;
+      drawclub(typepos, 12, cardcolor);
+    }
+    if (type == 2) {
+      typepos = pos;
+      typepos.x += 38;
+      typepos.y += 80;
+      drawheart(typepos, 38.4, 12, cardcolor);
+    }
+    if (type == 3) {
+      typepos = pos;
+      typepos.x += 50;
+      typepos.y += 70;
+      drawdiamond(typepos, 40, 60, cardcolor);
+    }
   } else {
     typepos = pos;
     typepos.x += 33;
@@ -447,7 +460,7 @@ int main(void) {
   bool loss = false;
   bool win = false;
   bool hashit = false;
-  int money = 10000000000;
+  int money = 100;
   int bet = 0;
   bool hitbutton = false;
   bool standbutton = false;
@@ -531,24 +544,24 @@ int main(void) {
         if (!hashit) {
           if (mousepos.x > 800 && mousepos.x < 850 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            if (bet != money*0.2) {
-            bet = money * 0.2;
+            if (bet != money * 0.2) {
+              bet = money * 0.2;
             } else {
               bet = 0;
             }
           }
           if (mousepos.x > 875 && mousepos.x < 925 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            if (bet != money*0.5) {
-            bet = money * 0.5;
+            if (bet != money * 0.5) {
+              bet = money * 0.5;
             } else {
               bet = 0;
             }
           }
           if (mousepos.x > 725 && mousepos.x < 775 && mousepos.y > 625 &&
               mousepos.y < 675) {
-            if (bet != money*0.1) {
-            bet = money * 0.1;
+            if (bet != money * 0.1) {
+              bet = money * 0.1;
             } else {
               bet = 0;
             }
@@ -556,7 +569,7 @@ int main(void) {
           if (mousepos.x > 975 && mousepos.x < 1025 && mousepos.y > 625 &&
               mousepos.y < 675) {
             if (bet != money) {
-            bet = money;
+              bet = money;
             } else {
               bet = 0;
             }
@@ -662,29 +675,29 @@ int main(void) {
 
     totaltime += GetFrameTime();
     BeginDrawing();
-    Color tempred = {155,0,0,255};
+    Color tempred = {155, 0, 0, 255};
     Color tempgrey = {50, 50, 50, 255};
-    Color tempgrey2 = {100,100,100,255};
+    Color tempgrey2 = {100, 100, 100, 255};
     ClearBackground(GRAY);
     DrawText("Stand", 805, 50, 30, WHITE);
     DrawCircle(850, 150, 50, WHITE);
-    DrawCircle(850,150,40, tempred);
+    DrawCircle(850, 150, 40, tempred);
     if (!standbutton) {
-    DrawRectangle(810, 140, 80, 10, tempred);
-    DrawCircle(850,140,40, RED);
+      DrawRectangle(810, 140, 80, 10, tempred);
+      DrawCircle(850, 140, 40, RED);
     }
     DrawText("Hit", 1030, 50, 30, WHITE);
     DrawCircle(1050, 150, 50, WHITE);
     if (!stand) {
-      DrawCircle(1050,150,40, tempred);
+      DrawCircle(1050, 150, 40, tempred);
       if (!hitbutton) {
-      DrawRectangle(1010, 140, 80, 10, tempred);
-      DrawCircle(1050,140,40, RED);
+        DrawRectangle(1010, 140, 80, 10, tempred);
+        DrawCircle(1050, 140, 40, RED);
       }
     } else {
-      DrawCircle(1050,150,40, tempgrey);
+      DrawCircle(1050, 150, 40, tempgrey);
       DrawRectangle(1010, 140, 80, 10, tempgrey);
-      DrawCircle(1050,140,40, tempgrey2);
+      DrawCircle(1050, 140, 40, tempgrey2);
     }
     DrawText(TextFormat("Bet: $%i", bet), 50, 650, 30, WHITE);
     DrawText(TextFormat("Bank: $%i", money), 50, 600, 30, WHITE);
@@ -692,34 +705,34 @@ int main(void) {
       DrawText("20%", 810, 600, 20, WHITE);
       DrawCircle(825, 650, 25, WHITE);
       DrawCircle(825, 650, 20, RED);
-      if (bet == money*0.2) {
-      DrawRectangle(825, 630, 20, 20, RED);
+      if (bet == money * 0.2) {
+        DrawRectangle(825, 630, 20, 20, RED);
       } else {
-      DrawRectangle(805, 630, 20, 20, RED);
+        DrawRectangle(805, 630, 20, 20, RED);
       }
       DrawText("50%", 885, 600, 20, WHITE);
       DrawCircle(900, 650, 25, WHITE);
       DrawCircle(900, 650, 20, RED);
-      if (bet == money*0.5) {
-      DrawRectangle(900, 630, 20, 20, RED);
+      if (bet == money * 0.5) {
+        DrawRectangle(900, 630, 20, 20, RED);
       } else {
-      DrawRectangle(880, 630, 20, 20, RED);
+        DrawRectangle(880, 630, 20, 20, RED);
       }
       DrawText("10%", 740, 600, 20, WHITE);
       DrawCircle(750, 650, 25, WHITE);
       DrawCircle(750, 650, 20, RED);
-      if (bet == money*0.1) {
-      DrawRectangle(750, 630, 20, 20, RED);
+      if (bet == money * 0.1) {
+        DrawRectangle(750, 630, 20, 20, RED);
       } else {
-      DrawRectangle(730, 630, 20, 20, RED);
+        DrawRectangle(730, 630, 20, 20, RED);
       }
       DrawText("All in!", 970, 600, 20, WHITE);
       DrawCircle(1000, 650, 25, WHITE);
       DrawCircle(1000, 650, 20, RED);
       if (bet == money) {
-      DrawRectangle(1000, 630, 20, 20, RED);
+        DrawRectangle(1000, 630, 20, 20, RED);
       } else {
-      DrawRectangle(980, 630, 20, 20, RED);
+        DrawRectangle(980, 630, 20, 20, RED);
       }
     }
     DrawText("Dealers Cards:", 20, 20, 60, WHITE);
@@ -757,9 +770,9 @@ int main(void) {
     if (win) {
       DrawText("You Win!", 500, 400, 100, GREEN);
     }
-    Vector2 postemp = {200,200};
-    //drawface(postemp, 40, 3, BLACK);
-    //drawcard(postemp, 100, 150, 10, 2, 2, 1);
+    Vector2 postemp = {200, 200};
+    // drawface(postemp, 40, 3, BLACK);
+    // drawcard(postemp, 100, 150, 10, 2, 2, 1);
 
     EndDrawing();
   }
